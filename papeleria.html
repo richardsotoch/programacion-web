@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papelería Online</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1f472f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #86966b;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Identificación</h2>
+
+        <form id="loginForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="contrasena1">Contraseña:</label>
+            <input type="password" id="contrasena1" name="contrasena1" required>
+
+            <label for="contrasena2">Confirmar Contraseña:</label>
+            <input type="password" id="contrasena2" name="contrasena2" required>
+
+            <button type="button" onclick="verificarCredenciales()">Ingresar</button>
+        </form>
+    </div>
+
+    <script>
+        function verificarCredenciales() {
+            var nombre = document.getElementById("nombre").value;
+            var contrasena1 = document.getElementById("contrasena1").value;
+            var contrasena2 = document.getElementById("contrasena2").value;
+
+            if (nombre && contrasena1 && contrasena2 && contrasena1 === contrasena2) {
+                alert(`¡Bienvenido, ${nombre}!`);
+                // Redirigir a la página del formulario
+                window.location.href = "formulario.html";
+            } else {
+                alert("La información de identificación no es válida. Por favor, inténtelo de nuevo.");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
